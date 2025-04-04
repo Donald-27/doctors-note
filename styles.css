@@ -1,0 +1,190 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header Container */
+header {
+    background-color: rgb(12, 12, 170);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    flex-wrap: wrap;
+    height: 74px;
+}
+
+.header-left,
+.header-center,
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Logo and Name */
+.logo {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.header-name {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Navigation Center */
+.header-center {
+    flex: 1;
+    justify-content: center;
+}
+
+/* Nav */
+nav {
+    display: flex;
+    background-color: rgb(12, 12, 170);
+}
+
+nav .dropdown {
+    position: relative;
+    margin: 0 28px;
+}
+
+nav .dropbtn {
+    background-color: rgb(12, 12, 170);
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+nav .dropbtn::after {
+    content: " ▼";
+    font-size: 8px;
+}
+
+/* Dropdown Content */
+nav .dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: rgb(12, 12, 170);
+    border-radius: 5px;
+    min-width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    flex-direction: column;
+}
+
+nav .dropdown:hover .dropdown-content {
+    display: flex;
+}
+
+.dropdown-content a {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: white;
+    display: block;
+    transition: background 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #005799;
+}
+
+/* See a Doctor Button */
+.header-right .see-a-doctor {
+    background-color: rgb(255, 166, 0);
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 13px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.see-a-doctor:hover {
+    background-color: rgb(149, 255, 0);
+}
+
+/* Hamburger Icon */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .header-center {
+        flex: 1 1 100%;
+        order: 2;
+        margin-top: 10px;
+        justify-content: flex-start;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: all 0.5s ease;
+    }
+
+    nav.show {
+        max-height: 1000px;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    nav .dropdown {
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Soft white line */
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+    }
+
+    nav .dropdown-content {
+        display: none;
+        position: relative;
+        width: 100%;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.5s ease;
+    }
+
+    nav .dropdown.show .dropdown-content {
+        display: block;
+        opacity: 1;
+        max-height: 500px;
+    }
+
+    .dropdown-content a {
+        background-color: rgb(12, 12, 170);
+    }
+}
