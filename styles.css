@@ -212,7 +212,7 @@ nav .dropdown:hover .dropdown-content {
   .steps {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 60px;
     flex-wrap: wrap;
   }
   
@@ -236,8 +236,8 @@ nav .dropdown:hover .dropdown-content {
   }
   
   .step img {
-    width: 80px;
-    height: 80px;
+    width: 180px;
+    height: 180px;
     margin-bottom: 10px;
   }
   
@@ -251,13 +251,20 @@ nav .dropdown:hover .dropdown-content {
     font-size: 14px;
     color: #333;
   }
-  
+  .info-section {
+    height: 250px;
+    background-color: #b2e6ff;
+justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
   .info-box {
     margin-top: 50px;
-    background-color: #b2e6ff;
+    background-color: whitesmoke;
     padding: 30px 20px;
     border-radius: 20px;
-    max-width: 600px;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -616,6 +623,323 @@ nav .dropdown:hover .dropdown-content {
     padding: 15px 0;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+:root {
+  --primary: #0066ff;
+  --primary-light: #e6f0ff;
+  --secondary: #00d4ff;
+  --dark: #1a1a2e;
+  --light: #f8f9fa;
+  --gray: #6c757d;
+  --success: #28a745;
+  --font-main: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+.services-section {
+  padding: 4rem 0;
+  background-color: #64b1e5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.services-section h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 3rem;
+  text-align: center;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.services-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.service-nav {
+  margin-bottom: 1rem;
+}
+
+.service-nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.service-nav li {
+  margin: 0 1rem;
+  position: relative;
+}
+
+.service-nav li a {
+  display: block;
+  padding: 1rem 1.5rem;
+  color: var(--gray);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.service-nav li.active a {
+  color: var(--primary);
+}
+
+.service-nav li.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  z-index: 2;
+}
+
+.service-content {
+  display: none;
+  animation: fadeIn 0.5s ease;
+  background-color: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.service-content.active {
+  display: block;
+}
+
+.service-content h2 {
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.service-content h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 3px;
+}
+
+.service-content p {
+  margin-bottom: 1.5rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+.service-features {
+  columns: 2;
+  column-gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.service-features li {
+  list-style-type: none;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-left: 1.5rem;
+  break-inside: avoid;
+}
+
+.service-features li::before {
+  content: '•';
+  color: var(--primary);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.cta-box {
+  background-color: var(--primary-light);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+  border-left: 4px solid var(--primary);
+}
+
+.cta-box h3 {
+  color: var(--primary);
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.btn-book {
+  display: inline-block;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  color: white;
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 102, 255, 0.2);
+}
+
+.btn-book:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 102, 255, 0.3);
+}
+
+/* Substance Use specific styles */
+.substance-list {
+  columns: 2;
+  column-gap: 2rem;
+  margin: 1.5rem 0;
+}
+
+.substance-list li {
+  list-style-type: none;
+  margin-bottom: 0.8rem;
+  position: relative;
+  padding-left: 1.5rem;
+  break-inside: avoid;
+}
+
+.substance-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.info-link {
+  display: inline-block;
+  margin: 1.5rem 0;
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.info-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.info-link:hover::after {
+  width: 100%;
+}
+
+.fax-info {
+  background-color: var(--primary-light);
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  border-left: 4px solid var(--primary);
+}
+
+.fax-info strong {
+  color: var(--primary);
+}
+
+.visit-clinic {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.visit-clinic a {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(0, 102, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.visit-clinic a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 102, 255, 0.4);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .service-nav ul {
+      flex-direction: column;
+      align-items: center;
+      border-bottom: none;
+  }
+
+  .service-nav li {
+      margin: 0.5rem 0;
+      width: 100%;
+      text-align: center;
+  }
+
+  .service-nav li.active::after {
+      display: none;
+  }
+
+  .service-features,
+  .substance-list {
+      columns: 1;
+  }
+
+  .service-content {
+      padding: 1.5rem;
+  }
+}
+
+
+
 
 
   /* Footer Styles */

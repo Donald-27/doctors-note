@@ -93,3 +93,64 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   });
+  
+
+
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // Tab navigation functionality
+    const tabs = document.querySelectorAll('.service-nav li');
+    const tabContents = document.querySelectorAll('.service-content');
+
+    // Function to switch tabs
+    function switchTab(target) {
+        // Remove active class from all tabs and contents
+        tabs.forEach(tab => tab.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+
+        // Add active class to clicked tab
+        const selectedTab = document.querySelector(`.service-nav li[data-target="${target}"]`);
+        if (selectedTab) {
+            selectedTab.classList.add('active');
+        }
+
+        // Show corresponding content
+        document.getElementById(target).classList.add('active');
+    }
+
+    // Add click event to each tab
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = this.getAttribute('data-target');
+            switchTab(target);
+            
+            // Update URL hash
+            window.location.hash = target;
+        });
+    });
+
+    // Check for hash in URL on page load
+    if (window.location.hash) {
+        const target = window.location.hash.substring(1);
+        if (document.getElementById(target)) {
+            switchTab(target);
+        }
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            if (this.getAttribute('href') !== '#') {
+                e.preventDefault();
+                const target = this.getAttribute('href');
+                if (target !== window.location.hash) {
+                    document.querySelector(target).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    });
+});
